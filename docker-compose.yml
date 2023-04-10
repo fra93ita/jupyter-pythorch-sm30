@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  jupyter:
+    image: jupyter-pythorch-sm30:local
+    build:
+      dockerfile: Dockerfile
+    environment:
+      J_PSSWD: "password"
+    ports:
+      - "8888:8888"
+    volumes:
+      - /opt/jupyter:/opt/jupyter
