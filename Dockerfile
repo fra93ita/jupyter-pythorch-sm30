@@ -72,5 +72,5 @@ ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
 ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:/opt/pytorch/pytorch-"$PYTORCH_VERSION"/torch/lib
 RUN python -m pip install jupyterlab
 
-EXPOSE 8888
-CMD jupyter lab --no-browser --ip 0.0.0.0 --notebook-dir=/opt/jupyter --allow-root --port 8888 --NotebookApp.token='$J_PSSWD'
+EXPOSE $J_PORT
+CMD jupyter lab --no-browser --ip 0.0.0.0 --notebook-dir=/opt/jupyter --allow-root --port $J_PORT --NotebookApp.token='$J_PSSWD'
