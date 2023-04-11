@@ -5,6 +5,7 @@ services:
     build:
       dockerfile: Dockerfile
     environment:
+      J_PORT: 8888
       J_PSSWD: "password"
     ports:
       - "8888:8888"
